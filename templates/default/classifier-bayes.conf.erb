@@ -1,0 +1,14 @@
+<% if node['rspamd']['redis']['servers'].nil? %>
+  backend = "sqlite3";
+<% else %>
+  backend = "redis";
+  servers = "<%= node['rspamd']['redis']['servers'].join(',') %>";
+<% end %>
+
+<% unless node['rspamd']['bayes-classifier']['per_user'].nil? %>
+per_user = <%= node['rspamd']['bayes-classifier']['per_user'].to_s %>;
+<% end %>
+
+<% unless node['rspamd']['bayes-classifier']['autolearn'].nil? %>;
+autolearn = <%= node['rspamd']['bayes-classifier']['autolearn'].to_s %>;
+<% end %>

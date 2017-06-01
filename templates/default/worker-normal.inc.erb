@@ -1,0 +1,9 @@
+<% if node['rspamd']['workers']['normal']['mime'] %>
+mime = <%= node['rspamd']['workers']['normal']['mime'].to_s %>;
+<% end %>
+
+<% if node['rspamd']['workers']['normal']['allow_learn'] %>
+allow_learn = <%= node['rspamd']['workers']['normal']['allow_learn'].to_s %>;
+<% end %>
+
+bind_socket = "<%= node['rspamd']['workers']['normal']['bind_socket'] %>";

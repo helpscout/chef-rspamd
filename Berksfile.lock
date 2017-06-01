@@ -1,0 +1,10 @@
+DEPENDENCIES
+  rspamd
+    path: .
+    metadata: true
+  test-helpers
+    path: test/fixtures/cookbooks/test-helpers
+
+GRAPH
+  rspamd (1.2.1)
+  test-helpers (0.0.1)

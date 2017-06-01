@@ -1,0 +1,13 @@
+<% unless node['rspamd']['workers']['controller']['password'].nil? %>
+password        = "<%= node['rspamd']['workers']['controller']['password'] %>";
+<% end %>
+
+<% unless node['rspamd']['workers']['controller']['enable_password'].nil? %>
+enable_password = "<%= node['rspamd']['workers']['controller']['enable_password'] %>";
+<% end %>
+
+<% node['rspamd']['workers']['controller']['secure_ip'].each do |ip| %>
+secure_ip       = "<%= ip %>";
+<% end %>
+
+bind_socket     = "<%= node['rspamd']['workers']['controller']['bind_socket'] %>";

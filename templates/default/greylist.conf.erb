@@ -1,0 +1,11 @@
+<% if node['rspamd']['greylist']['enabled'] %>
+expire        = <%= node['rspamd']['greylist']['expire'] %>;
+timeout       = <%= node['rspamd']['greylist']['timeout'] %>;
+key_prefix    = "<%= node['rspamd']['greylist']['key_prefix'] %>";
+ipv4_mask     = <%= node['rspamd']['greylist']['ipv4_mask'] %>;
+ipv6_mask     = <%= node['rspamd']['greylist']['ipv6_mask'] %>;
+max_data_len  = <%= node['rspamd']['greylist']['max_data_len'] %>;
+message       = "<%= node['rspamd']['greylist']['message'] %>";
+<% else %>
+enabled = false;
+<% end %>

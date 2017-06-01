@@ -1,0 +1,5 @@
+filters           = "<%= @filters %>";
+check_all_filters = <%= node['rspamd']['check_all_filters'] %>;
+classify_headers  = [
+                    <% node['rspamd']['classify_headers'].each do |header|%>"<%=header-%>",
+                    <%end%>];
